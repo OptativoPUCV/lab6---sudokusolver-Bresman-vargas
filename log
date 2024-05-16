@@ -48,3 +48,17 @@ Thu 16 May 2024 05:48:43 PM UTC:
  1 file changed, 20 insertions(+), 1 deletion(-)
  tests:  0|0
 0107dc1
+Thu 16 May 2024 05:52:28 PM UTC: 
+ sudoku.c | 24 +++++++++++++++++-------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:110:16: error: unused variable ‘aux2’ [-Werror=unused-variable]
+  110 |          Node* aux2 = copy(aux);
+      |                ^~~~
+sudoku.c:118:1: error: control reaches end of non-void function [-Werror=return-type]
+  118 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+b514a4d

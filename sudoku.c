@@ -88,23 +88,33 @@ Vamos a implementar un método de búsqueda, como el Algoritmo de Búsqueda en P
 Node* DFS(Node* initial, int* cont){
    Stack* stack = createStack();
    push(stack, initial);
-   while(!is_final(top(stack)) && get_size(stack) != 0){
+   *cont = 0;
+
+   while(!is_empty(stack)){
       Node* n = top(stack);
       pop(stack);
+      (*cont)++;
+      if(is_final(n)){
+         while(is_empty(stack)){
+            Node* aux = top(stack);
+            pop(stack);
+            free(aux);
+         }
+         free(stack);
+         return n;
+      }
+
       List* adj = get_adj_nodes(n);
       Node* aux = first(adj);
       while(aux){
          Node* aux2 = copy(aux);
-         push(stack, aux2);
+         push(stack, aux);
          aux = next(adj);
       }
+      free(n);
+      free(adj);
       
    }
-   if(get_size(stack) == 0){
-      return NULL;
-   }
-   return top(stack);
-  return NULL;
 }
 
 
