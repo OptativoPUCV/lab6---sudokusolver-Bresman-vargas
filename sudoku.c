@@ -83,8 +83,6 @@ int is_final(Node* n){
    }
     return 1;
 }
-/*Método de Búsqueda para Explorar el Grafo
-Vamos a implementar un método de búsqueda, como el Algoritmo de Búsqueda en Profundidad (DFS) o el Algoritmo de Búsqueda en Anchura (BFS). En este caso, usaremos DFS para explorar sistemáticamente el grafo implícito hasta alcanzar un nodo final*/
 Node* DFS(Node* initial, int* cont){
    Stack* stack = createStack();
    push(stack, initial);
@@ -112,9 +110,10 @@ Node* DFS(Node* initial, int* cont){
          aux = next(adj);
       }
       free(n);
-      free(adj);
-      
+      free(adj);  
    }
+   free(stack);
+   return NULL;
 }
 
 

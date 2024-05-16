@@ -62,3 +62,14 @@ sudoku.c:118:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 b514a4d
+Thu 16 May 2024 05:54:41 PM UTC: 
+ sudoku.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:108:16: error: unused variable ‘aux2’ [-Werror=unused-variable]
+  108 |          Node* aux2 = copy(aux);
+      |                ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fff7511
