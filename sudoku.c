@@ -68,7 +68,15 @@ int is_valid(Node* n){
 
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
+   List* list=createList();
+   int fila = 0;
+   int columna = 0;
+   int i,j;
+   for (int val = 1; val <= 9; val++) {
+        Node* new_node = copy(n);
+        new_node->sudo[fila][columna] = val;
+        pushBack(list, new_node);
+    }
     return list;
 }
 
