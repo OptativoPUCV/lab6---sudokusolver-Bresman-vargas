@@ -105,7 +105,6 @@ Node* DFS(Node* initial, int* cont){
       List* adj = get_adj_nodes(n);
       Node* aux = first(adj);
       while(aux){
-         Node* aux2 = copy(aux);
          push(stack, aux);
          aux = next(adj);
       }

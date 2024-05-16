@@ -73,3 +73,9 @@ sudoku.c:108:16: error: unused variable ‘aux2’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 fff7511
+Thu 16 May 2024 05:54:55 PM UTC: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  4|3
+total_score: 30/70
+4672548
