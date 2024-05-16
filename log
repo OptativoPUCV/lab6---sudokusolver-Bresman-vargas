@@ -14,3 +14,20 @@ sudoku.c:67:5: note: previous definition of ‘main’ with type ‘int(int,  ch
       |     ^~~~
 Compilation failed
 789756d
+Thu 16 May 2024 05:41:34 PM UTC: 
+ sudoku.c | 44 +++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 43 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:79:66: error: subscripted value is neither array nor pointer nor vector
+   79 |             if(submatriz_check[submatriz_fila][submatriz_columna][num-1] == 1){
+      |                                                                  ^
+sudoku.c:82:63: error: subscripted value is neither array nor pointer nor vector
+   82 |             submatriz_check[submatriz_fila][submatriz_columna][num-1];
+      |                                                               ^
+sudoku.c:60:8: error: variable ‘submatriz_check’ set but not used [-Werror=unused-but-set-variable]
+   60 |    int submatriz_check[9][9] = {0};
+      |        ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+25ee6e2
