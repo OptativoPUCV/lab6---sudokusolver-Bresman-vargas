@@ -64,23 +64,14 @@ int is_valid(Node* n){
          int num = n->sudo[i][j];
          if(num != 0){
             //Si es distinto de 0, verificar que no se repita en la fila
-            if(filas_check[i][num-1] == 1){
+            int submatriz = (i/3)*3 + (j/3);
+            if(filas_check[i][num-1] == 1 || columnas_check[j][num-1] == 1 || submatriz_check[submatriz][num-1] == 1){
                return 0;
             }
+
             filas_check[i][num-1] = 1;
-            //Verificar que no se repita en la columna
-            if(columnas_check[j][num-1] == 1){
-               return 0;
-            }
             columnas_check[j][num-1] = 1;
-            //Verificar que no se repita en la submatriz
-            int submatriz_fila = i / 3;
-            int submatriz_columna = j / 3;
-            if(submatriz_check[submatriz_fila][submatriz_columna][num-1] == 1){
-               return 0;
-            }
-            submatriz_check[submatriz_fila][submatriz_columna][num-1];
-            
+            submatriz_check[submatriz][num-1] = 1;
             
          }
       }
