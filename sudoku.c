@@ -43,17 +43,6 @@ void print_node(Node* n){
     printf("\n");
 }
 
-/*
-   2.Cree la función int is_valid(Node * n), para validar si un estado/nodo es válido (cumple con las restricciones del problema). Debe validar que:
-
-   No se repitan números en las filas
-   No se repitan números en las columnas
-   No se repitan números en las submatrices de 3x3
-   Si el estado es válido la función retorna 1, si no lo es retorna 0.
-
-   Para marcar los números que vayan apareciendo en una fila/columna/submatriz puede usar un arreglo de enteros de largo 10 inicializado con 0s. Cada vez que aparezca un número i, verifique que la casilla i del arreglo sea igual a 0, luego márquela con un '1'. Si la casilla es '1' quiere decir que el número ya estaba marcado por lo que la fla/columna/submatriz no es válida.
-*/
-
 int is_valid(Node* n){
    int filas_check[9][9] = {0};
    int columnas_check[9][9] = {0};
@@ -68,11 +57,9 @@ int is_valid(Node* n){
             if(filas_check[i][num-1] == 1 || columnas_check[j][num-1] == 1 || submatriz_check[submatriz][num-1] == 1){
                return 0;
             }
-
             filas_check[i][num-1] = 1;
             columnas_check[j][num-1] = 1;
             submatriz_check[submatriz][num-1] = 1;
-            
          }
       }
    }
@@ -87,7 +74,14 @@ List* get_adj_nodes(Node* n){
 
 
 int is_final(Node* n){
-    return 0;
+   for(int i = 0; i < 9; i++) {
+      for(int j = 0; j < 9; j++){
+         if(n->sudo[i][j] == 0){
+            return 0;
+         }
+      }
+   }
+    return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
